@@ -42,7 +42,9 @@ extension AudioDataFetchRequestType {
     }
 
     public var request: URLRequest? {
-        return URLRequest.create(method: method, url: url, params: params)
+        return URLRequest.create(method: method,
+                                 url: url,
+                                 params: params)
     }
 }
 
@@ -56,7 +58,11 @@ public struct AudioDataApi {
 
         public struct AudioData: AudioDataFetchRequest, AudioDataFetchRequestType {
 
-            public typealias Result = String
+            public typealias Result = Audios
+
+            public init() {
+            
+            }
 
             var method: HttpMethod {
                 return .get

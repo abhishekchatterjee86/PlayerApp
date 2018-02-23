@@ -8,36 +8,32 @@
 
 import Foundation
 
-typealias ServerCompletionHandler = (_ serverResponseObject: NetworkServiceResponseHolder) -> Void
-
-protocol NetworkServiceServerCommunicationProtocol {
-    func connectToServerWithRequest(_ request: URLRequest, completionHandler handler: ServerCompletionHandler?)
+enum HttpClientError: Error {
+    case unknown
+    case nonHTTPResponse(response: URLResponse)
 }
 
-class NetworkCommunicator : NetworkServiceServerCommunicationProtocol {
+class NetworkCommunicator: NSObject {
 
-    func connectToServerWithRequest(_ request: URLRequest, completionHandler handler: ServerCompletionHandler?) {
-        let session = URLSession(configuration: URLSessionConfiguration.ephemeral)
-        let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
-            let consentResponseHolder = NetworkServiceResponseHolder(inData: data as Data?, inResponse: response as! HTTPURLResponse, inError: error as NSError?)
-            handler?(consentResponseHolder)
-        }
-        
-        dataTask.resume()
-        session.finishTasksAndInvalidate()
+    private let session: URLSession
+
+    init(session: URLSession) {
+        self.session = session
     }
-}
 
-class NetworkServiceResponseHolder {
-
-    var data: Data?
-    var response: HTTPURLResponse
-    var error: NSError?
-
-    init (inData: Data?, inResponse: HTTPURLResponse, inError: NSError?) {
-        self.data = inData
-        self.response = inResponse
-        self.error = inError
+    func execute(request: URLRequest, completionHandler: @escaping (Data?, HTTPURLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            guard let response = response, let data = data else {
+                completionHandler(nil, nil, HttpClientError.unknown)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completionHandler(data, nil, HttpClientError.nonHTTPResponse(response: response))
+                return
+            }
+            completionHandler(data, httpResponse, error)
+        })
+        return task
     }
 }
 

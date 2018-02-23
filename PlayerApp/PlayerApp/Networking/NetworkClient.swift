@@ -21,20 +21,35 @@ enum Either<L, R> {
     case right(R)
 }
 
-class NetworkClient: NetworkClientProtocol {
+class NetworkClient {
 
-    fileprivate var communicator: NetworkServiceServerCommunicationProtocol!
+    private var httpClient: NetworkCommunicator
 
-    init() {
-        self.communicator = NetworkCommunicator()
+    public init(session: URLSession) {
+        self.httpClient = NetworkCommunicator(session: session)
     }
 
-    deinit {
-        self.communicator = nil
-    }
-
-    func fetchAudioData(completionHandler handler: @escaping SyncCompletionHandler, onError: @escaping (Error) -> Void) {
-
+    public func fetchAudioData<A: AudioDataFetchRequest, B: Deserializable>(_ request: A, onSuccess: @escaping (B) -> Void, onError: @escaping (Error) -> Void) -> URLSessionDataTask
+        where A.Result == B {
+            guard let req = request.request else {
+                onError(NetworkClientError.unknown)
+                return URLSessionDataTask()
+            }
+            
+            return httpClient.execute(
+                request: req,
+                completionHandler: { (data, response, error) in
+                    switch NetworkClient.getResponse(data: data, response: response, error: error) {
+                    case let .left(error):
+                        onError(error)
+                    case let .right((_, d)):
+                        guard let deserialized = NetworkClient.deserialize(data: d, converter: B.create) else {
+                            onError(NetworkClientError.deserializationFailed(data: d))
+                            return
+                        }
+                        onSuccess(deserialized)
+                    }
+            })
     }
 
     private static func getResponse(data: Data?, response: HTTPURLResponse?, error: Error?) -> Either<Error, (HTTPURLResponse, Data)> {
@@ -49,13 +64,14 @@ class NetworkClient: NetworkClientProtocol {
         }
     }
 
-    private static func deserializeData (_ data : Data) -> Dictionary<String, AnyObject>? {
-        var jsonDict : Dictionary<String, AnyObject>?
+    private static func deserialize<T>(data: Data, converter: ([AnyHashable:Any]) -> T?) -> T? {
         do {
-            jsonDict = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? Dictionary<String, AnyObject>
+            guard let json = try JSONSerialization.jsonObject(with: data) as? [AnyHashable:Any] else {
+                return nil
+            }
+            return converter(json)
+        } catch {
+            return nil
         }
-        catch _ as NSError{
-        }
-        return jsonDict
     }
 }

@@ -17,7 +17,8 @@
 		9CABADBA203FF63300BED47E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADB5203FF63200BED47E /* NetworkClient.swift */; };
 		9CABADBB203FF63300BED47E /* NetworkCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADB6203FF63200BED47E /* NetworkCommunicator.swift */; };
 		9CABADBC203FF63300BED47E /* AudioDataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADB7203FF63200BED47E /* AudioDataFetchRequest.swift */; };
-		9CABADC0203FFA0700BED47E /* NetworkingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADBF203FFA0700BED47E /* NetworkingWorker.swift */; };
+		9CABADC3204004D000BED47E /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADC2204004D000BED47E /* Audio.swift */; };
+		9CABADC6204006B500BED47E /* AudioJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADC5204006B500BED47E /* AudioJson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,8 @@
 		9CABADB5203FF63200BED47E /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		9CABADB6203FF63200BED47E /* NetworkCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCommunicator.swift; sourceTree = "<group>"; };
 		9CABADB7203FF63200BED47E /* AudioDataFetchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDataFetchRequest.swift; sourceTree = "<group>"; };
-		9CABADBF203FFA0700BED47E /* NetworkingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingWorker.swift; sourceTree = "<group>"; };
+		9CABADC2204004D000BED47E /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		9CABADC5204006B500BED47E /* AudioJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioJson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,8 @@
 		9CABAD92203FF02700BED47E /* PlayerApp */ = {
 			isa = PBXGroup;
 			children = (
-				9CABADBE203FF9EE00BED47E /* Workers */,
+				9CABADC42040069C00BED47E /* JSON */,
+				9CABADC12040047300BED47E /* Model */,
 				9CABADB3203FF61000BED47E /* Networking */,
 				9CABAD93203FF02700BED47E /* AppDelegate.swift */,
 				9CABAD95203FF02700BED47E /* ViewController.swift */,
@@ -119,12 +122,20 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		9CABADBE203FF9EE00BED47E /* Workers */ = {
+		9CABADC12040047300BED47E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9CABADBF203FFA0700BED47E /* NetworkingWorker.swift */,
+				9CABADC2204004D000BED47E /* Audio.swift */,
 			);
-			path = Workers;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CABADC42040069C00BED47E /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				9CABADC5204006B500BED47E /* AudioJson.swift */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,13 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CABADC3204004D000BED47E /* Audio.swift in Sources */,
 				9CABADBC203FF63300BED47E /* AudioDataFetchRequest.swift in Sources */,
+				9CABADC6204006B500BED47E /* AudioJson.swift in Sources */,
 				9CABADBB203FF63300BED47E /* NetworkCommunicator.swift in Sources */,
 				9CABADB9203FF63300BED47E /* URLRequestExtension.swift in Sources */,
 				9CABAD96203FF02700BED47E /* ViewController.swift in Sources */,
 				9CABAD94203FF02700BED47E /* AppDelegate.swift in Sources */,
 				9CABADBA203FF63300BED47E /* NetworkClient.swift in Sources */,
-				9CABADC0203FFA0700BED47E /* NetworkingWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
