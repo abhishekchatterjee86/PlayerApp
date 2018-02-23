@@ -13,6 +13,11 @@
 		9CABAD9B203FF02700BED47E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CABAD9A203FF02700BED47E /* Assets.xcassets */; };
 		9CABAD9E203FF02700BED47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CABAD9C203FF02700BED47E /* LaunchScreen.storyboard */; };
 		9CABADA9203FF02700BED47E /* PlayerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADA8203FF02700BED47E /* PlayerAppTests.swift */; };
+		9CABADB9203FF63300BED47E /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADB4203FF63200BED47E /* URLRequestExtension.swift */; };
+		9CABADBA203FF63300BED47E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADB5203FF63200BED47E /* NetworkClient.swift */; };
+		9CABADBB203FF63300BED47E /* NetworkCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADB6203FF63200BED47E /* NetworkCommunicator.swift */; };
+		9CABADBC203FF63300BED47E /* AudioDataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADB7203FF63200BED47E /* AudioDataFetchRequest.swift */; };
+		9CABADC0203FFA0700BED47E /* NetworkingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADBF203FFA0700BED47E /* NetworkingWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		9CABADA4203FF02700BED47E /* PlayerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CABADA8203FF02700BED47E /* PlayerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAppTests.swift; sourceTree = "<group>"; };
 		9CABADAA203FF02700BED47E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CABADB4203FF63200BED47E /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		9CABADB5203FF63200BED47E /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		9CABADB6203FF63200BED47E /* NetworkCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCommunicator.swift; sourceTree = "<group>"; };
+		9CABADB7203FF63200BED47E /* AudioDataFetchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDataFetchRequest.swift; sourceTree = "<group>"; };
+		9CABADBF203FFA0700BED47E /* NetworkingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,8 @@
 		9CABAD92203FF02700BED47E /* PlayerApp */ = {
 			isa = PBXGroup;
 			children = (
+				9CABADBE203FF9EE00BED47E /* Workers */,
+				9CABADB3203FF61000BED47E /* Networking */,
 				9CABAD93203FF02700BED47E /* AppDelegate.swift */,
 				9CABAD95203FF02700BED47E /* ViewController.swift */,
 				9CABAD97203FF02700BED47E /* Main.storyboard */,
@@ -94,6 +106,25 @@
 				9CABADAA203FF02700BED47E /* Info.plist */,
 			);
 			path = PlayerAppTests;
+			sourceTree = "<group>";
+		};
+		9CABADB3203FF61000BED47E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9CABADB7203FF63200BED47E /* AudioDataFetchRequest.swift */,
+				9CABADB5203FF63200BED47E /* NetworkClient.swift */,
+				9CABADB6203FF63200BED47E /* NetworkCommunicator.swift */,
+				9CABADB4203FF63200BED47E /* URLRequestExtension.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9CABADBE203FF9EE00BED47E /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				9CABADBF203FFA0700BED47E /* NetworkingWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CABADBC203FF63300BED47E /* AudioDataFetchRequest.swift in Sources */,
+				9CABADBB203FF63300BED47E /* NetworkCommunicator.swift in Sources */,
+				9CABADB9203FF63300BED47E /* URLRequestExtension.swift in Sources */,
 				9CABAD96203FF02700BED47E /* ViewController.swift in Sources */,
 				9CABAD94203FF02700BED47E /* AppDelegate.swift in Sources */,
+				9CABADBA203FF63300BED47E /* NetworkClient.swift in Sources */,
+				9CABADC0203FFA0700BED47E /* NetworkingWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
