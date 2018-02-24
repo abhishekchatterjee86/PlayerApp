@@ -19,6 +19,17 @@
 		9CABADBC203FF63300BED47E /* AudioDataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADB7203FF63200BED47E /* AudioDataFetchRequest.swift */; };
 		9CABADC3204004D000BED47E /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADC2204004D000BED47E /* Audio.swift */; };
 		9CABADC6204006B500BED47E /* AudioJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADC5204006B500BED47E /* AudioJson.swift */; };
+		9CABADCE20405C8200BED47E /* AudioListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADC820405C8200BED47E /* AudioListInteractor.swift */; };
+		9CABADD020405C8200BED47E /* AudioListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADCA20405C8200BED47E /* AudioListPresenter.swift */; };
+		9CABADD120405C8200BED47E /* AudioListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADCB20405C8200BED47E /* AudioListRouter.swift */; };
+		9CABADD220405C8200BED47E /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADCC20405C8200BED47E /* AudioListViewController.swift */; };
+		9CABADD320405C8200BED47E /* AudioListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADCD20405C8200BED47E /* AudioListWorker.swift */; };
+		9CABADDA2040828D00BED47E /* Artist.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CABADD92040828D00BED47E /* Artist.png */; };
+		9CABADDD2040829F00BED47E /* Pause Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CABADDB2040829F00BED47E /* Pause Button.png */; };
+		9CABADDE2040829F00BED47E /* Play Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CABADDC2040829F00BED47E /* Play Button.png */; };
+		9CABADE02040924500BED47E /* AudioListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABADDF2040924500BED47E /* AudioListTableViewCell.swift */; };
+		9CFDA9962040C3470024572C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFDA9952040C33A0024572C /* AVFoundation.framework */; };
+		9CFDA9982040C4010024572C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFDA9972040C3F40024572C /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +59,17 @@
 		9CABADB7203FF63200BED47E /* AudioDataFetchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDataFetchRequest.swift; sourceTree = "<group>"; };
 		9CABADC2204004D000BED47E /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		9CABADC5204006B500BED47E /* AudioJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioJson.swift; sourceTree = "<group>"; };
+		9CABADC820405C8200BED47E /* AudioListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListInteractor.swift; sourceTree = "<group>"; };
+		9CABADCA20405C8200BED47E /* AudioListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListPresenter.swift; sourceTree = "<group>"; };
+		9CABADCB20405C8200BED47E /* AudioListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListRouter.swift; sourceTree = "<group>"; };
+		9CABADCC20405C8200BED47E /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
+		9CABADCD20405C8200BED47E /* AudioListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListWorker.swift; sourceTree = "<group>"; };
+		9CABADD92040828D00BED47E /* Artist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artist.png; sourceTree = "<group>"; };
+		9CABADDB2040829F00BED47E /* Pause Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause Button.png"; sourceTree = "<group>"; };
+		9CABADDC2040829F00BED47E /* Play Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Button.png"; sourceTree = "<group>"; };
+		9CABADDF2040924500BED47E /* AudioListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListTableViewCell.swift; sourceTree = "<group>"; };
+		9CFDA9952040C33A0024572C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9CFDA9972040C3F40024572C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CFDA9982040C4010024572C /* MediaPlayer.framework in Frameworks */,
+				9CFDA9962040C3470024572C /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +98,7 @@
 				9CABAD92203FF02700BED47E /* PlayerApp */,
 				9CABADA7203FF02700BED47E /* PlayerAppTests */,
 				9CABAD91203FF02700BED47E /* Products */,
+				9CFDA9942040C33A0024572C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +114,7 @@
 		9CABAD92203FF02700BED47E /* PlayerApp */ = {
 			isa = PBXGroup;
 			children = (
+				9CABADC720405C5400BED47E /* Audio List */,
 				9CABADC42040069C00BED47E /* JSON */,
 				9CABADC12040047300BED47E /* Model */,
 				9CABADB3203FF61000BED47E /* Networking */,
@@ -98,6 +124,7 @@
 				9CABAD9A203FF02700BED47E /* Assets.xcassets */,
 				9CABAD9C203FF02700BED47E /* LaunchScreen.storyboard */,
 				9CABAD9F203FF02700BED47E /* Info.plist */,
+				9CABADD420407C7300BED47E /* Resources */,
 			);
 			path = PlayerApp;
 			sourceTree = "<group>";
@@ -136,6 +163,38 @@
 				9CABADC5204006B500BED47E /* AudioJson.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		9CABADC720405C5400BED47E /* Audio List */ = {
+			isa = PBXGroup;
+			children = (
+				9CABADC820405C8200BED47E /* AudioListInteractor.swift */,
+				9CABADCA20405C8200BED47E /* AudioListPresenter.swift */,
+				9CABADCB20405C8200BED47E /* AudioListRouter.swift */,
+				9CABADCC20405C8200BED47E /* AudioListViewController.swift */,
+				9CABADCD20405C8200BED47E /* AudioListWorker.swift */,
+				9CABADDF2040924500BED47E /* AudioListTableViewCell.swift */,
+			);
+			path = "Audio List";
+			sourceTree = "<group>";
+		};
+		9CABADD420407C7300BED47E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CABADD92040828D00BED47E /* Artist.png */,
+				9CABADDB2040829F00BED47E /* Pause Button.png */,
+				9CABADDC2040829F00BED47E /* Play Button.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9CFDA9942040C33A0024572C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CFDA9972040C3F40024572C /* MediaPlayer.framework */,
+				9CFDA9952040C33A0024572C /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,8 +280,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CABADDE2040829F00BED47E /* Play Button.png in Resources */,
+				9CABADDA2040828D00BED47E /* Artist.png in Resources */,
 				9CABAD9E203FF02700BED47E /* LaunchScreen.storyboard in Resources */,
 				9CABAD9B203FF02700BED47E /* Assets.xcassets in Resources */,
+				9CABADDD2040829F00BED47E /* Pause Button.png in Resources */,
 				9CABAD99203FF02700BED47E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,10 +307,16 @@
 				9CABADBC203FF63300BED47E /* AudioDataFetchRequest.swift in Sources */,
 				9CABADC6204006B500BED47E /* AudioJson.swift in Sources */,
 				9CABADBB203FF63300BED47E /* NetworkCommunicator.swift in Sources */,
+				9CABADD220405C8200BED47E /* AudioListViewController.swift in Sources */,
 				9CABADB9203FF63300BED47E /* URLRequestExtension.swift in Sources */,
 				9CABAD96203FF02700BED47E /* ViewController.swift in Sources */,
 				9CABAD94203FF02700BED47E /* AppDelegate.swift in Sources */,
+				9CABADE02040924500BED47E /* AudioListTableViewCell.swift in Sources */,
+				9CABADD020405C8200BED47E /* AudioListPresenter.swift in Sources */,
 				9CABADBA203FF63300BED47E /* NetworkClient.swift in Sources */,
+				9CABADCE20405C8200BED47E /* AudioListInteractor.swift in Sources */,
+				9CABADD320405C8200BED47E /* AudioListWorker.swift in Sources */,
+				9CABADD120405C8200BED47E /* AudioListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

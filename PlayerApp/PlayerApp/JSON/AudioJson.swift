@@ -54,10 +54,10 @@ extension Audio.Author: Deserializable {
 
 extension Audio.ImageLinks: Deserializable {
     public static func create(_ dict: [AnyHashable : Any]) -> Audio.ImageLinks? {
-        let smallImageUrl = dict["name"] as? String
-        let mediumImageUrl = dict["name"] as? String
-        let largeImageUrl = dict["name"] as? String
-        let thumbnailImage = dict["name"] as? String
+        let smallImageUrl = dict["s"] as? String
+        let mediumImageUrl = dict["m"] as? String
+        let largeImageUrl = dict["l"] as? String
+        let thumbnailImage = dict["xs"] as? String
 
         return Audio.ImageLinks(smallImageUrl: smallImageUrl, mediumImageUrl: mediumImageUrl, largeImageUrl: largeImageUrl, thumbnailImage: thumbnailImage)
     }
